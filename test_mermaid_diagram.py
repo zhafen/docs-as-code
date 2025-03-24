@@ -1,15 +1,16 @@
 import unittest
 import docs_as_code
+from textwrap import dedent
 
 class TestMermaidDiagram(unittest.TestCase):
     def test_create_mermaid_diagram(self):
 
         # Expected mermaid diagram output (this is just an example, adjust as needed)
-        expected_mermaid_diagram = """
-graph TD
-    A[add] --> B[return a + b]
-    C[result = add(1, 2)]
-"""
+        expected_mermaid_diagram = dedent("""
+        graph TD
+            A[add] --> B[return a + b]
+            C[result = add(1, 2)]
+        """)
 
         # Create mermaid diagram using the package function
         mermaid_diagram = create_mermaid_diagram(python_code)
