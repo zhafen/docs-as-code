@@ -16,7 +16,6 @@ The data underlying a component definition:
 The syntax used for a component definition is
 
 ```
-
 ## Components
 
 ### [Component Name]
@@ -40,12 +39,15 @@ The data underlying a component instance is:
 
 The syntax used to define a small number of entities is...
 ```
-### [Entity ID]
+# [Entity ID]
 Type: [Component Type]
 
 - Attribute A: Value A
 - Attribute B: Value B
 - Attribute C: Value C
+
+## Attribute D
+Value D. Useful for large values.
 ```
 
 Larger number of entities can be represented by component tables,
