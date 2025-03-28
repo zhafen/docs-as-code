@@ -9,11 +9,23 @@ class TestMermaidDiagram(unittest.TestCase):
         # Expected mermaid diagram output (this is just an example, adjust as needed)
         expected_mermaid_diagram = dedent("""
         graph TD
-            A[add] --> B[return a + b]
-            C[result = add(1, 2)]
+            execute --> transform
+            transform --> load
         """)
 
         # Create mermaid diagram using the package function
+
+        class ETLWorkflow(workflow.Workflow):
+            def __init__(self):
+                super().__init__()
+
+                self.add_node("execute")
+                self.add_node("transform")
+                self.add_node("load")
+
+                self.add_edge("execute", "transform")
+                self.add_edge("transform", "load")
+
         mermaid_diagram = ""
 
         # Assert that the created mermaid diagram matches the expected output
