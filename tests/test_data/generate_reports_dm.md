@@ -23,20 +23,20 @@ end
 Pull the reports to the system where they will be executed.
 
 - Type: Task
-- Implementation: None
 - Input: None
 - Output:
     local_ra_reports: Git Repository
+- Implementation: None
 
 ### Parse Config
 Parse the reports config table to identify
 
 - Type: Task
-- Implementation: None
 - Input:
     reports_config_path (str): Location of the config table.
 - Output:
     active_reports_config (Global Temp View): Dataframe containing active reports.
+- Implementation: None
 
 ### Execute Reports
 Execute each of the reports in turn.
@@ -88,7 +88,7 @@ Walk the directory path to find notebooks that are part of the report.
     - notebook_paths: (list[str], "Notebooks in the directory.")
 - Implementation: None
 
-### Sort notebooks.
+### Sort notebooks
 
 Sort the notebooks into their execution order.
 
@@ -117,11 +117,11 @@ A series of tasks to complete according to a directed graph.
 
 ## Task
 
-- Input (dict[str: (type, str)]): A dictionary of name, input type, and description.
+- Input (dict[str: (type, str)]): A dictionary of name, type, and description.
 - Output (dict[str: (type, str)]): A dictionary of name, type, and description.
-- Implementation (entity_id): None or a reference to the implementation component.
+- Implementation (str): None or the URI of the implementation.
 
-## Attribute
-A single attribute, used for e.g. components definitions
+## For Loop
 
-- Name (str)
+- Looped task (task | function): What is actually repeated.
+- Implementation (str): None or the URI of the implementation.
